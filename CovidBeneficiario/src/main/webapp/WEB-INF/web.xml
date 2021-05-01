@@ -1,0 +1,37 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ControllerAcceso</servlet-name>
+  	<display-name>ControllerAcceso</display-name>
+  	<description></description>
+  	<servlet-class>com.Abby.Controladores.ControllerAcceso</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Controlleracceso</servlet-name>
+  	<display-name>Controlleracceso</display-name>
+  	<description></description>
+  	<servlet-class>com.Abby.Controladores.Controlleracceso</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerAcces</servlet-name>
+  	<display-name>ControllerAcces</display-name>
+  	<description></description>
+  	<servlet-class>com.Abby.Controladores.ControllerAcces</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControllerAcceso</servlet-name>
+  	<url-pattern>/ControllerAcceso</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Controlleracceso</servlet-name>
+  	<url-pattern>/Controlleracceso</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerAcces</servlet-name>
+  	<url-pattern>/ControllerAcces</url-pattern>
+  </servlet-mapping>
+</web-app>
