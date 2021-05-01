@@ -43,7 +43,7 @@ public class ControllerPersona extends HttpServlet implements Servlet {
 			Personas per = new Personas();
 			per.setDUI(dui);
 			Personas cls = new Personas();
-			lista = cls.mostrar(per);
+			Object lista = cls.mostrar(per);
 			if (lista.size() == 1) {
 				for (var i : lista) {
 					request.getSession().setAttribute("Nombre", i.getNombres());

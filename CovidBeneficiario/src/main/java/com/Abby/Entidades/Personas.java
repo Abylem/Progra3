@@ -26,5 +26,7 @@ public class Personas {
 	public void setDUI(int dUI) {
 		DUI = dUI;
 	}
+	
+	
 
 }

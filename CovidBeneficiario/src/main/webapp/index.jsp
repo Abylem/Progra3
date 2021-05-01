@@ -67,4 +67,5 @@
 			</form>
 		</center>
 	</div>
+	</body>
 </html>
