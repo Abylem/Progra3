@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConexionBd {
-
-private Connection coonec;
+	
+	private Connection coonec;
 	
 	public ConexionBd() {
 		
@@ -23,5 +23,5 @@ private Connection coonec;
 	public Connection RetornarConexion() {
 		return coonec;
 	}
-
 }
+

@@ -22,6 +22,18 @@
   	<description></description>
   	<servlet-class>com.Abby.Controladores.ControllerAcces</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ControllerCerrar</servlet-name>
+  	<display-name>ControllerCerrar</display-name>
+  	<description></description>
+  	<servlet-class>com.Abby.Controladores.ControllerCerrar</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerPersona</servlet-name>
+  	<display-name>ControllerPersona</display-name>
+  	<description></description>
+  	<servlet-class>com.Abby.Controladores.ControllerPersona</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerAcceso</servlet-name>
   	<url-pattern>/ControllerAcceso</url-pattern>
@@ -33,5 +45,13 @@
   <servlet-mapping>
   	<servlet-name>ControllerAcces</servlet-name>
   	<url-pattern>/ControllerAcces</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCerrar</servlet-name>
+  	<url-pattern>/ControllerCerrar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerPersona</servlet-name>
+  	<url-pattern>/ControllerPersona</url-pattern>
   </servlet-mapping>
 </web-app>

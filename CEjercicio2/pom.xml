@@ -36,7 +36,6 @@
 <groupId>mysql</groupId>
 <artifactId>mysql-conector-java</artifactId>
 <version>8.0.21</version>
-  </dependency>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>

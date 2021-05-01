@@ -1,51 +1,55 @@
 package com.Abby.DAO;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
+import lombok.Data;
 
-import com.Abby.Conexion.ConexionBd;
-import com.Abby.Entidades.Personas;
-
+@Data
 public class ClsPersona {
-	Connection con = conexion.RetornarConexion();
 	
-	public boolean ComprobarExistencia(Personas per) {
-		ConexionBd cn = new ConexionBd();
-		Connection conexion = cn.RetornarConexion();
-		boolean Existencia = false;
-		try {
-			CallableStatement Statement = conexion.prepareCall("Call SP_S_1Persona(?)");
-			Statement.setInt("PDUI", per.getDUI());
-			ResultSet rs = Statement.executeQuery();
-			while(rs.next()) {
-				Existencia = true;
-			}
-			
-		}catch(Exception e){
-			
-		}
-		return Existencia;
+	public int id;
+	public String nombres;
+	public String apellidos;
+	public String Dui;
+	public String Direccion;
+
+	public int getId() {
+		return id;
 	}
-	public String ObtenerNombre(Personas per) {
-		ConexionBd cn = new ConexionBd();
-		Connection conexion = cn.RetornarConexion();
-		String Nombre = "";
-		try {
-			CallableStatement Statement = conexion.prepareCall("Call SP_S_1Persona(?)");
-			Statement.setInt("PDUI", per.getDUI());
-			ResultSet rs = Statement.executeQuery();
-			while(rs.next()) {
-				per.setNombre(rs.getString("nombre"));
-				Nombre = per.getNombre(Nombre);
-			}
-			
-		}catch(Exception e){
-			
-		}
-		return Nombre;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getDui() {
+		return Dui;
+	}
+
+	public void setDui(String dui) {
+		Dui = dui;
+	}
+
+	public String getDireccion() {
+		return Direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
 
 
 }

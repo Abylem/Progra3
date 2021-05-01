@@ -1,40 +1,70 @@
-<%@page languaje="java" contenttype="text//html; charset-utf-8"
-pageEconding="utf-8"%> 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/min.css" >
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate/4.1.1/animate/css/min.css" >
-      <link rel="stylesheet" href="CSS/estiloindex.css">
+<LINK REL=StyleSheet HREF="CCS/Estilo.css" TYPE="text/css" />
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<head>
+<meta charset="UTF-8">
+<title>Beneficiario</title>
+</head>
 <body>
-<h2>Hello World!</h2>
-</body>
-<div class="logo">
-   <center>
-   <img class="logo" src="img/logo_GOES2.png" alt="">
-   </center>
-</div>
-<div class="container animate_animate_backInDawn">
-   <div class="row justify-content-center align-items-center vh-100">
-     <div class="offset col-md-8 bg-light border border-succes rounded">
-       <form action="ControllerAcceso" method="post">
-         <div class="contenedor">
-           <h5 aling="center"> Consulta quien de tu familia es el beneficiario del apoyo 
-           economico para la alimentacion
-           </h5>
-           <center>
-               <label class="label">Covid-19</label>
-           </center>
-           <div class="input-group mt-5 mb-5">
-              <span class="input-group-text far fa-2x fa-address-card"></span>
-               <input class="form-control" type="number" name="DUI"
-               placeholder="Ingresa tu Documento Unico de Identidad" min="0" required>
-               <button class="btn btn-success" type="submit">Consultar</button>
-           </div>
-         </div>
-       </form>
-     </div>
-   </div>
-</div>
+	<%
+	HttpSession sesion = (HttpSession) request.getSession();
+	String usuSession = String.valueOf(sesion.getAttribute("Nombre"));
+	String consulta = String.valueOf(sesion.getAttribute("Consulta"));
+	if (usuSession.equals(null) || usuSession.equals("null") || consulta.equals("Error")) {
+
+		response.sendRedirect("Consulta.jsp");
+
+	}
+	%>
+	<div class="col-lg-12 color">
+		<center>
+			<h2>
+				GOBIERNO DE <img src="Imagenes/logo.png" height="80px" width="80px">
+				EL SALVADOR
+			</h2>
+		</center>
+	</div>
+	<div>
+		<form action="controllerPersona" method="post">
+			<%
+			String nombre = (String) session.getAttribute("Nombre");
+			String apellido = (String) session.getAttribute("Apellido");
+			String direccion = (String) session.getAttribute("Direccion");
+			%>
+			<center>
+				<h3>
+					En hora buena
+					<%=nombre%>
+					<%=apellido%>
+					eres beneficiario de los $300 del apoyo
+				</h3>
+				<h3>economico que esta haciendo entrega el Gobierno de El
+					Salvador.</h3>
+				<h3>
+					Acercate a la agencia Banco Hipotecario en
+					<%=direccion%>
+				</h3>
+				<i class="far fa-smile-beam fa-10x"></i>
+			</center>
+		</form>
+	</div>
+
+	<div class="p-5">
+		<center>
+			<form action="controllerCerrar" method="post">
+				<button class="btn btn-success " name="btnConsultar"
+					value="Consultar">Nueva consulta</button>
+			</form>
+		</center>
+	</div>
 </html>
