@@ -1,16 +1,23 @@
 package com.abby.Controladores;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.abby.Conexion.ConexionBd;
+import com.abby.DAO.ClsUsuario;
+import com.abby.Entidades.TipoUsuario;
+import com.abby.Entidades.Usuario;
+
 
 /**
  * Servlet implementation class ControllerBd
  */
+@WebServlet("/ControllerBd")
 public class ControllerBd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

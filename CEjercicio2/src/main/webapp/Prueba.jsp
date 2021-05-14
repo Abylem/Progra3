@@ -8,5 +8,10 @@
 </head>
 <body>
 
+<form action="ControllerBd" method="post">
+
+<input type="submit">
+</form>
+
 </body>
 </html>
